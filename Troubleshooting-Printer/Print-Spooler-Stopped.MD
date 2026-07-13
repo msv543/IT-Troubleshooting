@@ -27,7 +27,7 @@ sc qc spooler = 'DISABLED'
 ```
 ![Troubleshooting-Printer](screenshots/PS-2.png)
 
-4. Checked Event Viewer to verify and saw the following error: 'The print spooler  failed to import the printer drive...'
+4. Checked Event Viewer to verify and saw the following error: 'The print spooler  failed to import the printer driver...'
 ![Troubleshooting-Printer](screenshots/PS-3.png)
 
 5. Ran services.msc on administrator mode and navigated to 'Print Spooler.'
