@@ -2,6 +2,8 @@
 
 ## Problem
 
+Users report they can see the printer but not able to access it. They can not print.
+
 ## Symptoms
 
 - Printer share appears unavailable
