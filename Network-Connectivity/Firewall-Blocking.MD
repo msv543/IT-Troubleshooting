@@ -12,23 +12,27 @@ A Windows 11 client was unable to access the internet because a Windows Defender
 - IP configuration was correct.
 - Internal network resources remained accessible.
 
+![Network-Connectivity](screenshots/FB-1.png)
+
 ## Investigation
 
-Verified the client's network configuration using:
-
-```cmd
-ipconfig /all
+1. Verified the client's network configuration using: ipconfig /all.
+2. Confirmed the client had a valid IP address, subnet mask, default gateway, and DNS server.
+3. Ran the following two commands on cmd:
 ```
+ping 192.168.100.10 = 'General Failure'
+ping 8.8.8.8 = 'General Failure'
+```
+![Network-Connectivity](screenshots/FB-2.png)
 
-Confirmed the client had a valid IP address, subnet mask, default gateway, and DNS server.
+4. Reviewed Windows Defender Firewall with Advanced Security and discovered a custom outbound rule blocking internet traffic.
 
-Reviewed Windows Defender Firewall with Advanced Security (`wf.msc`) and discovered a custom outbound rule blocking internet traffic.
+![Network-Connectivity](screenshots/FB-3.png)
 
 ## Commands Used
 
 ```cmd
 ipconfig /all
-wf.msc
 ping 192.168.100.10
 ping 8.8.8.8
 ```
@@ -41,6 +45,8 @@ A custom outbound Windows Defender Firewall rule was preventing internet traffic
 
 Disabled or removed the blocking outbound firewall rule.
 
+![Network-Connectivity](screenshots/FB-4.png)
+
 ## Verification
 
 Verified internet connectivity by:
@@ -51,3 +57,5 @@ ping google.com
 ```
 
 Successfully browsed external websites and confirmed applications could access the internet.
+
+![Network-Connectivity](screenshots/FB-5.png)
