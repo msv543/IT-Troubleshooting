@@ -49,10 +49,6 @@ gpresult /r
 ```powershell
 gpupdate /force
 gpresult /r
-gpresult /h C:\gporeport.html
-net use
-ping DC1
-nslookup DC1
 ```
 
 # Root Cause
