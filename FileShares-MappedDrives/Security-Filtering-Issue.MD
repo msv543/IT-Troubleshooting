@@ -31,8 +31,6 @@
 ```
 gpupdate /force
 gpresult /r
-gpresult /h gporeport.html
-whoami /groups
 ```
 
 ## Root Cause
