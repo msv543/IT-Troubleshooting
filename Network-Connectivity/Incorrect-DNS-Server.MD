@@ -27,6 +27,7 @@ ping google.com
 ping 8.8.8.8
 ipconfig /flushdns 
 ipconfig /renew
+```
 
 ## Root Cause
 
