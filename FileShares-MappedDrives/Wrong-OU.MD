@@ -2,10 +2,10 @@
 
 ## Problem
 
-Users in the Sales organizational unit are supposed to receive the S: network drive through Group Policy Preferences. After logging in, the drive does not appear in File Explorer even though Group Policy is updating successfully.
+Users in the Sales organizational unit are supposed to receive the S: network drive through Group Policy Preferences. After logging in, the drive does not appear in file directory even though Group Policy is updating successfully.
 
 ## Symptoms
-- Sales drive is missing from File Explorer.
+- Sales drive is missing from file directory.
 - gpudate /force completes successfully.
 - No errors are displayed during logon.
 - Other group polices apply normally.
