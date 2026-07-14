@@ -16,13 +16,27 @@ Users in the Sales organizational unit are supposed to receive the S: network dr
 
 1. Logged in as Sales1 user.
 2. Confirmed the Sales Drive was missing.
+
+![FileShares-MappedDrives](screenshots/WO-1.png)
+
 3. Verified the shared folder could be opened manually using: \\FILESERVER\Sales Drive.
+
+![FileShares-MappedDrives](screenshots/WO-2.png)
+
 4. Ran gpupdate /force and restarted the PC.
 5. Ran gpresult /r and verified the Sales Drive Mapping GPO was applied.
+
+![FileShares-MappedDrives](screenshots/WO-3.png)
+
 6. Opened Group Policy Management in Domain Controller.
 7. Edited the 'Sales Drive Map' and navigated to: User Configuration -> Preferences -> Windows Settings -> Drive Maps
 8. Verified the drive letter, share path, and security filtering were correct.
+
+![FileShares-MappedDrives](screenshots/WO-4.png)
+
 9. Discovered the mapping item had been configured with Item-level targeting that referenced the wrong Active Directory OU, preventing the drive from being created from the current user.
+
+![FileShares-MappedDrives](screenshots/WO-5.png)
 
 ## Commands Used
 ```
@@ -51,3 +65,4 @@ As a result, the drive mapping policy never processed for Sales users.
 - gpresult /r continued showing the GPO was applied.
 - The mapped drive persisted after subsequent logons.
 
+![FileShares-MappedDrives](screenshots/WO-6.png)
