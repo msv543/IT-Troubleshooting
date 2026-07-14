@@ -15,6 +15,8 @@ A mapped network drive that should automatically appear for domain users was mis
 
 # Investigation
 
+(Sales1 user will be used that is a part of the Sales OU and Sales-Access group.)
+
 1. Verified the client was joined to the domain.
 
 ![FileShares-MappedDrives](screenshots/DMM-2.png)
