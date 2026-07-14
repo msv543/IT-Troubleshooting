@@ -7,24 +7,27 @@ A Windows 11 client was unable to access websites or domain resources because it
 ## Symptoms
 
 - Internet websites would not load.
-- ping google.com failed.
-- nslookup google.com failed.
+- nslookup dc1 failed.
 - Domain resources could not be located.
-- ping 8.8.8.8 was successful. indicating basic network connectivity.
+- ping dc1 was successful. indicating basic network connectivity.
 
 ## Investigation
 
-1. Verified the client's TCP/IP configuration using: ipconfig /all
-2. Tested DNS resolution using: nslookup
-3. Confirmed the issue was limited to name resolution by successfully pinging a public IP address.
+1. On CMD, ran the following three commands:
+```
+nslookup dc1
+ping dc1
+ipconfig /all
+```
+2. nslookup failed, but ping worked.
+3. Noticed the incorrect DNS Server being used in the TCP/IP configurations. 
 
 ## Commands Used
 
 ```cmd
 ipconfig /all
-nslookup google.com
-ping google.com
-ping 8.8.8.8
+nslookup dc1
+ping dc1
 ipconfig /flushdns 
 ipconfig /renew
 ```
@@ -35,11 +38,10 @@ The client was configured with an incorrect DNS server address, preventing hostn
 
 ## Resolution
 
-Updated the preferred DNS Server to the correct internal DNS server provided by the Domain Controller.
+Updated the preferred DNS Server to the correct internal DNS server provided by the Domain Controller by navigating to: Network and Internet -> Network & Sharing Center -> Change Adapter Settings -> Properties -> Internet Protocol Version 4 (TCP/IPv4)
 
 ## Verification
 
 - Successfully resolved hostnames using 'nslookup'
-- Successfully pinged 'google.com'
 - Internet browsing functionality was restored.
 - Domain resources were accessible again.
