@@ -1,0 +1,51 @@
+# Security Filtering Issue
+
+## Symptoms
+
+- Sales users do not see the Sales (S:) mapped drive.
+- gpupdate /force completes successfully with no errors.
+- The GPO appears under Applied Group Policy Objects or is visible in Group Policy Management.
+- Other GPOs continue to apply normally.
+- Shared folder is accessible manually by entering \\DC1\Sales.
+
+## Investigation
+
+1. Logged into a Sales domain user account.
+2. Ran gpupdate /force to refresh Group Policy.
+3. Verified the Sales drive was still missing.
+4. Executed gpresult /r to review applied Group Policies.
+5. Opened Group Policy Management on the domain controller.
+6. Selected the Drive Mapping GPO and opened the Scope tab.
+7. Checked the Security Filtering section.
+8. Found that Authenticated Users had been removed and replaced with IT-Access, preventing Sales users from reading and applying the GPO.
+9. Added the correct security group (Sales-Access) back to Security Filtering.
+10. Forced another Group Policy update.
+
+## Commands Used
+```
+gpupdate /force
+gpresult /r
+gpresult /h gporeport.html
+whoami /groups
+```
+
+## Root Cause
+
+The GPO's Security Filtering was configured incorrectly. The Sales users were not members of the group listed in the Security Filtering section, so they lacked Read and Apply Group Policy permissions. As a result, Windows ignored the GPO even though it was linked to the correct Organizational Unit.
+
+## Resolution
+
+1. Opened Group Policy Management.
+2. Selected the 'Sales Drive Map' GPO.
+3. Opened the Scope Tab.
+4. Under Security Filtering, removed "HR-Access' Security Group.
+5. Added the 'Sales-Access' Security Group.
+6. Ensured the group has Read and Apply Group Policy permissions.
+7. Run gpupdate /force on the client.
+
+## Verification
+
+- Ran gpupdate /force successfully.
+- Verified the mapped Sales (S:) drive appeared after policy refresh.
+- Confirmed gpresult /r listed the Drive Mapping GPO as applied.
+- Opened the mapped drive and verified access to the shared files.
