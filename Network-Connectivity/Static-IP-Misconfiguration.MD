@@ -12,6 +12,8 @@ A Windows 11 client was unable to communicate outside of the local network after
 - Local communication may work depending on the IP configuration.
 - Network icon appeared connected but network access was limited.
 
+![Network-Connectivity](screenshots/SIPM-1.png)
+
 ## Investigation
 
 1. Reviewed the client's network configuration using: ipconfig /all
@@ -23,6 +25,7 @@ ping 192.168.100.10 (Domain Controller)
 ping 8.8.8.8
 tracert 8.8.8.8
 ```
+![Network-Connectivity](screenshots/SIPM-2.png)
 
 ## Commands Used
 
@@ -48,9 +51,13 @@ Navigated to: Network and Internet -> Network and Sharing Center -> Change Adapt
 
 Renewed the DHCP lease to receive the correct network configuration.
 
+![Network-Connectivity](screenshots/SIPM-3.png)
+
 ## Verification
 
 - Client received a valid DHCP address.
 - Correct Default Gateway and DNS Server were assigned.
 - Successfully pinged internal and external hosts.
 - Internet connectivity and domain resources were restored.
+
+![Network-Connectivity](screenshots/SIPM-4.png)
