@@ -19,7 +19,7 @@ A Windows 11 client was unable to communicate outside of the local network after
 3. Verified the incorrect configuration by checking: IP Address, Default Gateway, Subnet Mask, DNS Server.
 4. Tested connectivity using:
 ```cmd
-ping 192.168.100.10
+ping 192.168.100.10 (Domain Controller)
 ping 8.8.8.8
 tracert 8.8.8.8
 ```
@@ -28,7 +28,7 @@ tracert 8.8.8.8
 
 ```cmd
 ipconfig /all
-ping 192.168.100.10
+ping 192.168.100.10 
 ping 8.8.8.8
 tracert 8.8.8.8
 ipconfig /release
@@ -41,7 +41,7 @@ The network adapter had been manually configured with an incorrect static IP con
 
 ## Resolution
 
-Changed the network adapter settings back to:
+Navigated to: Network and Internet -> Network and Sharing Center -> Change Adapter settings -> Properties -> Internet Protocol Version 4 (TCP/IPv4) and applied these settings:
 
 - Obtain an IP address automatically
 - Obtain DNS server address automatically
