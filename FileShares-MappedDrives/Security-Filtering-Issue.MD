@@ -12,7 +12,7 @@
 
 ## Investigation
 
-1. Logged into a Sales domain user account.
+1. Logged into a Sales1 domain user account.
 2. Ran gpupdate /force to refresh Group Policy.
 3. Verified the Sales drive was still missing.
 4. Executed gpresult /r to review applied Group Policies.
