@@ -22,6 +22,8 @@ ipconfig /all
 2. nslookup failed, but ping worked.
 3. Noticed the incorrect DNS Server being used in the TCP/IP configurations. 
 
+![Network-Connectivity](screenshots/IDNS-1.png)
+
 ## Commands Used
 
 ```cmd
@@ -40,8 +42,13 @@ The client was configured with an incorrect DNS server address, preventing hostn
 
 Updated the preferred DNS Server to the correct internal DNS server provided by the Domain Controller by navigating to: Network and Internet -> Network & Sharing Center -> Change Adapter Settings -> Properties -> Internet Protocol Version 4 (TCP/IPv4)
 
+![Network-Connectivity](screenshots/IDNS-2.png)
+
 ## Verification
 
 - Successfully resolved hostnames using 'nslookup'
 - Internet browsing functionality was restored.
 - Domain resources were accessible again.
+
+![Network-Connectivity](screenshots/IDNS-3.png)
+![Network-Connectivity](screenshots/IDNS-4.png)
