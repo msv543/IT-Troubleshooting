@@ -11,7 +11,7 @@ The HR users are able to access the shared folder on the network, but receives a
 - User cannot create, edit, or delete files.
 - Other users with different permissions can access the share normally.
 
-![FileShares-MappedDrives](screenshots/NTFS-02.png)
+![FileShares-MappedDrives](screenshots/NTFS-2.png)
 
 ## Investigation
 
@@ -24,13 +24,13 @@ The HR users are able to access the shared folder on the network, but receives a
 4. Tested connectivity to the file server.
 5. Verified HR1 was in the 'HR-Access' group.
 
-![FileShares-MappedDrives](screenshots/NTFS-03.png)
+![FileShares-MappedDrives](screenshots/NTFS-3.png)
 
 6. On 'FILESERVER' navigated to: C:\HR Drive -> Properties -> Sharing -> Advanced Sharing -> Properties
 7. Verified the 'HR-Access' group had full control permissions of drive.
 8. Navigated to Security Tab nad noticed the 'HR-Access' group only had 'Read' permissions.
 
-![FileShares-MappedDrives](screenshots/NTFS-04.png)
+![FileShares-MappedDrives](screenshots/NTFS-4.png)
 
 9. Determined that Share Permissions allowed access, but NTFS permissions denied it.
 10. Verified that NTFS permissions are the most restrictive when combined with Share Permissions.
@@ -52,7 +52,7 @@ The HR users security group had 'Read' permission through the Share Permissions,
 2. Edited the 'HR-Access' permissions to include modify.
 3. Applied the settings.
 
-![FileShares-MappedDrives](screenshots/NTFS-05.png)
+![FileShares-MappedDrives](screenshots/NTFS-5.png)
 
 ## Verification
 
@@ -63,5 +63,5 @@ The HR users security group had 'Read' permission through the Share Permissions,
 - Verified the mapped drive functioned normally without Access Denied errors.
 - Confirmed permissions using on PowerShell: icacls "D:\\fileserver\HR Drive"
 
-![FileShares-MappedDrives](screenshots/NTFS-06.png)
+![FileShares-MappedDrives](screenshots/NTFS-6.png)
 
