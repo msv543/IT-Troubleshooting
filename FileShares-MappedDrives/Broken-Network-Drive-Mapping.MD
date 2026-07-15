@@ -2,7 +2,7 @@
 
 # Problem
 
-A mapped network drive that should automatically appear for domain users was missing after logon. Users were unable to access the shared folder used for departmental files.
+A mapped network drive that should automatically appear for Sales users was missing after logon. Sales users were unable to access the shared folder used for departmental files.
 
 # Symptoms
 
