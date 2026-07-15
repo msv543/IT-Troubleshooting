@@ -1,4 +1,4 @@
-# Broken Network Drive Mapping Troubleshooting Lab
+# Broken Network Drive Mapping 
 
 # Problem
 
