@@ -47,6 +47,7 @@ Profile could not load so it created a temporary one.
 1. Logged in with martin.admin administrator account on PC1.
 2. Navigated back to C:\Users\Sales1
 3. Renamed 'NTUSER.BAD' to 'NTUSER.DAT'
+4. Navigated to Registry Editor, and removed '.bak' from the original SID.
 4. Logged off.
 5. Sales1 user logged in.
 6. Verified the normal user profile loaded successfully.
