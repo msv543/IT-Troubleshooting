@@ -28,6 +28,10 @@ A domain user (HR1) in PC1 is configured with a roaming profile path in Active D
 6. Opened Registry Editor and Navigated to: HKEY_LOCAL_MACHINE -> Software -> Microsoft -> Windows NT -> CurrentVersion -> ProfileList.
 7. Noticed a '.bak' SID and another duplicate SID.
 8. Noticed the 'CentralProfile' on the '.bak' SID points to the incorrect path at: \flieserver\profiles$\hr11.v6. 
+
+![User-Profile](screenshots/RP-04.png)
+
+
 9. The correct path should be: \fileserver\profiles$\hr1.v6. 
 10. On Active Directory, Opened Active Directory Usrs and Computers, and Navigated to: martinlab.local -> HR OU -> HR1 -> Properties -> Profile
 11. Verified that the Profile path is incorrect.
@@ -53,6 +57,10 @@ The server path can't be reached and there is no local profile so a temporary pr
 ## Resolution
 
 1. Corrected the roaming profile path: \\fileserver\profiles$hr1.
+
+![User-Profile](screenshots/RP-7.png)
+
+
 2. Logged on PC1 as martin.admin user.
 3. Navigated to Registry Editor to the SID keys for HR1 user.
 4. Deleted the TEMP SID key and removed '.bak' from the original.
