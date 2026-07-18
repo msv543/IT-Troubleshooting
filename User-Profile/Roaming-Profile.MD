@@ -79,3 +79,5 @@ The server path can't be reached and there is no local profile so a temporary pr
 - Retgistry ProfileList has no.bak, State=0, RefCount=0
 - The roaming profile folder hr1.v6 exists and updates.
 - ADUC profile path is correct.
+
+![User-Profile](screenshots/RP-9.png)
