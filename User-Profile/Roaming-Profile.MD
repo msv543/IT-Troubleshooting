@@ -33,7 +33,7 @@ A domain user (HR1) in PC1 is configured with a roaming profile path in Active D
 
 
 9. The correct path should be: \fileserver\profiles$\hr1.v6. 
-10. On Active Directory, Opened Active Directory Usrs and Computers, and Navigated to: martinlab.local -> HR OU -> HR1 -> Properties -> Profile
+10. On Active Directory, Opened Active Directory Users and Computers, and Navigated to: martinlab.local -> HR OU -> HR1 -> Properties -> Profile
 11. Verified that the Profile path is incorrect.
 
 ![User-Profile](screenshots/RP-5.png)
