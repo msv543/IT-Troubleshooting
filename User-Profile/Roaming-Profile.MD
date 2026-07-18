@@ -30,6 +30,7 @@ whoami
 net use
 eventvwr
 ping
+regedit
 ```
 
 ## Root Cause
@@ -47,3 +48,11 @@ The server path can't be reached and there is no local profile so a temporary pr
 5. Renamed the CentralProfile path to: \fileserver\profiles$\hr1.v6.
 6. Logged off as martin.admin.
 7. Logged back in as HR1 user.
+
+## Verification
+
+- HR1 logs in with no temporary profile.
+- A clean C:\Users\HR1 folder is created.
+- Retgistry ProfileList has no.bak, State=0, RefCount=0
+- The roaming profile folder hr1.v6 exists and updates.
+- ADUC profile path is correct.
