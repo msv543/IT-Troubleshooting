@@ -10,11 +10,19 @@ A domain user (HR1) in PC1 is configured with a roaming profile path in Active D
 - Event Viewer shows User Profile Service errors.
 - Profile path in AD points to a nonexistent path.
 
+![User-Profile](screenshots/RP-1.png)
+
 ## Investigation
 
 1. Opened Event Viewer and navigated to: Windows Logs -> Application.
-2. Noticed 3 errors from User Profile Service .
+2. Noticed 3 errors from User Profile Service.
+
+![User-Profile](screenshots/RP-2.png)
+
 3. Navigated to C:\Users and verified there is no local profile for HR1 user.
+
+![User-Profile](screenshots/RP-3.png)
+
 4. Checked the UNC path manually by running: \\fileserver\profiles$.
 5. Verified it is working successfully as the profile folder appears 'hr1.v6.'
 6. Opened Registry Editor and Navigated to: HKEY_LOCAL_MACHINE -> Software -> Microsoft -> Windows NT -> CurrentVersion -> ProfileList.
@@ -23,6 +31,9 @@ A domain user (HR1) in PC1 is configured with a roaming profile path in Active D
 9. The correct path should be: \fileserver\profiles$\hr1.v6. 
 10. On Active Directory, Opened Active Directory Usrs and Computers, and Navigated to: martinlab.local -> HR OU -> HR1 -> Properties -> Profile
 11. Verified that the Profile path is incorrect.
+
+![User-Profile](screenshots/RP-5.png)
+
 
 ## Commands Used
 ```
@@ -46,6 +57,10 @@ The server path can't be reached and there is no local profile so a temporary pr
 3. Navigated to Registry Editor to the SID keys for HR1 user.
 4. Deleted the TEMP SID key and removed '.bak' from the original.
 5. Renamed the CentralProfile path to: \fileserver\profiles$\hr1.v6.
+
+![User-Profile](screenshots/RP-6.png)
+
+
 6. Logged off as martin.admin.
 7. Logged back in as HR1 user.
 
