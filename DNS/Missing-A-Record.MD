@@ -21,6 +21,9 @@ ping dc1.martinlab.local = could not find host
 ping 192.168.100.10 = Successful
 nslookup 192.168.100.10 = unknown
 ```
+
+![DNS](screenshots/MAR-1.png)
+
 2. On Domain Controller 1, navigated to: Server Manager -> DNS -> Forward Lookup Zones -> martinlab.local.
 3. Noticed there is no (A) record for dc1.
 
