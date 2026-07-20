@@ -35,6 +35,9 @@ Each lab follows a consistent troubleshooting methodology:
 ### Network Connectivity
 ### Group Policy
 ### File Shares & Mapped Drives
+### Domain-Join
+### User-Profile
+### DNS
 
 ## Tools Used
 
