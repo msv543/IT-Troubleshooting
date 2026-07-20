@@ -7,6 +7,9 @@ Clients in the domain are experiencing Group Policy failures and intermittent do
 ## Symptoms
 
 - gpupdate /force fails.
+
+![DNS](screenshots/IF-2.png)
+
 - SYSVOL/NETLOGON access is incosistent.
 - Ping dc1 works.
 - nslookup dc1 works.
@@ -17,16 +20,27 @@ Clients in the domain are experiencing Group Policy failures and intermittent do
 
 1. Verified DNS server settings by running this command on PowerShell: ipconfig /all.
   - DNS Settings are correct.
+
+![DNS](screenshots/IF-3.png)
+
 2. Tested basic hostname resolution by runnning 3 commands:
 ```
 nslookup dc1
 ping dc1
 ping fileserver
+nltest /dsgetdc:martinlab.local
 ```
+![DNS](screenshots/IF-1.png)
+
 3. Tested DC Locator by running this command: nltest /dsgetdc:martinlab.local
   - "ERROR_NO_SUCH_DOMAIN"
+
+![DNS](screenshots/IF-4.png)
+
 4. On Domain Controller 1, Navigated to: Server Manager -> DNS -> Forward Lookup Zones.
 5. Noticed two similar zones and one of them is incorrect.
+
+![DNS](screenshots/IF-5.png)
 
 ## Root Cause
 
@@ -35,13 +49,25 @@ A second forward lookup zone was created with an incorrect name: martinlab.local
 ## Resolution
 
 1. Still on DC1, deleted martinlab.locall zone.
+
+![DNS](screenshots/IF-6.png)
+
 2. On PC1, flushed and re-registered the DNS.
+
+![DNS](screenshots/IF-8.png)
+
 3. Reset PC1.
 
 ## Verification
 
 - Verified Hostname resolution by running: nslookup dc1 and ping dc1.
 - Forcing group policy works successfully.
+
+![DNS](screenshots/IF-9.png)
+
 - DC Locator works successfully.
+
+![DNS](screenshots/IF-7.png)
+
 
 
